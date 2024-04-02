@@ -4,7 +4,7 @@ import com.b3.rbl.executeruleengine.incomeDetails;
  
 rule "Rs 0.0 – Rs 2.5 Lakhs"
     when
-        incomeDetail: IncomeDetails(incomeInRupees > 0 && incomeInRupees < 250000)
+        incomeDetail: incomeDetails(incomeInRupees > 0 && incomeInRupees < 250000)
     then
     System.out.println("Less Than 250000");
         incomeDetail.setIncomeTaxPercentage(0.0);
