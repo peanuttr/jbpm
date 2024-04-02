@@ -1,2 +1,54 @@
 package com.b3.rbl.executeruleengine;
 
+import com.b3.rbl.executeruleengine.IncomeDetails;
+
+rule "Rs 0.0 – Rs 2.5 Lakhs"
+    when
+        incomeDetails: IncomeDetails(incomeInRupees > 0 && incomeInRupees < 250000)
+    then
+    System.out.println("Less Than 250000");
+        incomeDetails.setIncomeTaxPercentage(0.0);
+end
+ 
+rule "Rs 2.5 lakhs - Rs 5.0 Lakhs"
+    when
+        incomeDetails: IncomeDetails(incomeInRupees > 250000 && incomeInRupees < 500000)
+    then
+    System.out.println("Less Than 500000");
+        incomeDetails.setIncomeTaxPercentage(5.0);
+end
+rule "Rs. 5.00 lakhs- Rs 7.5 Lakhs"
+    when
+        incomeDetails: IncomeDetails(incomeInRupees > 500000 && incomeInRupees < 750000)
+    then
+    System.out.println("Less Than 750000");
+        incomeDetails.setIncomeTaxPercentage(10.0);
+end
+rule "Rs 7.5 lakhs – Rs 10.00 Lakhs"
+    when
+        incomeDetails: IncomeDetails(incomeInRupees > 750000 && incomeInRupees < 1000000)
+    then
+    System.out.println("Less Than 1000000");
+        incomeDetails.setIncomeTaxPercentage(15.0);
+end
+rule "Rs 10.00 lakhs – Rs. 12.50 Lakhs"
+    when
+        incomeDetails: IncomeDetails(incomeInRupees > 1000000 && incomeInRupees < 1250000)
+    then
+    System.out.println("Less Than 1250000");
+        incomeDetails.setIncomeTaxPercentage(20.0);
+end
+rule "Rs. 12.5 lakhs- Rs. 15.00 Lakhs"
+    when
+        incomeDetails: IncomeDetails(incomeInRupees > 1250000 && incomeInRupees < 1500000)
+    then
+    System.out.println("Less Than 1500000");
+        incomeDetails.setIncomeTaxPercentage(25.0);
+end
+rule "> Rs. 15 Lakhs"
+    when
+        incomeDetails: IncomeDetails(incomeInRupees > 1500000)
+    then
+    System.out.println("Greater Than 1500000");
+        incomeDetails.setIncomeTaxPercentage(30.0);
+end
