@@ -6,12 +6,36 @@ package com.b3.rbl.executeruleengine;
 
 public class IncomeDetails implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public IncomeDetails() {
-    }
+	@org.kie.api.definition.type.Label(value = "Income In Rupees")
+	private java.lang.Integer incomeInRupees;
+	@org.kie.api.definition.type.Label(value = "Income Tax Percentage")
+	private java.lang.Double incomeTaxPercentage;
 
+	public IncomeDetails() {
+	}
 
+	public java.lang.Integer getIncomeInRupees() {
+		return this.incomeInRupees;
+	}
 
+	public void setIncomeInRupees(java.lang.Integer incomeInRupees) {
+		this.incomeInRupees = incomeInRupees;
+	}
+
+	public java.lang.Double getIncomeTaxPercentage() {
+		return this.incomeTaxPercentage;
+	}
+
+	public void setIncomeTaxPercentage(java.lang.Double incomeTaxPercentage) {
+		this.incomeTaxPercentage = incomeTaxPercentage;
+	}
+
+	public IncomeDetails(java.lang.Integer incomeInRupees,
+			java.lang.Double incomeTaxPercentage) {
+		this.incomeInRupees = incomeInRupees;
+		this.incomeTaxPercentage = incomeTaxPercentage;
+	}
 
 }
