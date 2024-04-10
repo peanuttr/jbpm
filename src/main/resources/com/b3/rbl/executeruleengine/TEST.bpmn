@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_KW-qEPbtEe6eaqJYBvbdyg" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_M28FYPbtEe6eaqJYBvbdyg" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_dataItem" structureRef="com.b3.rbl.executeruleengine.IncomeDetails"/>
   <bpmn2:itemDefinition id="__610136ED-6AC6-4E71-AD3B-579C67C23647_namespaceInputXItem" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="__610136ED-6AC6-4E71-AD3B-579C67C23647_modelInputXItem" structureRef="java.lang.String"/>
@@ -8,6 +8,16 @@
   <bpmn2:itemDefinition id="__610136ED-6AC6-4E71-AD3B-579C67C23647_dataOutputXItem" structureRef="com.b3.rbl.executeruleengine.IncomeDetails"/>
   <bpmn2:process id="executeruleengine.TEST" drools:packageName="com.b3.rbl.executeruleengine" drools:version="1.0" drools:adHoc="false" name="TEST" isExecutable="true" processType="Public">
     <bpmn2:property id="data" itemSubjectRef="_dataItem" name="data"/>
+    <bpmn2:sequenceFlow id="_7C36E756-0037-4AA1-A08D-147D6EEAFE26" sourceRef="_610136ED-6AC6-4E71-AD3B-579C67C23647" targetRef="_362E0507-99C8-4705-8461-9681496A2B31">
+      <bpmn2:extensionElements>
+        <drools:metaData name="isAutoConnection.source">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
+        <drools:metaData name="isAutoConnection.target">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_1DC01710-72D4-461F-A1C2-B95C83F2C346" sourceRef="_BC1ED25C-B129-4862-870C-80A02D3E30BB" targetRef="_610136ED-6AC6-4E71-AD3B-579C67C23647">
       <bpmn2:extensionElements>
         <drools:metaData name="isAutoConnection.target">
@@ -25,6 +35,9 @@
         </drools:metaData>
       </bpmn2:extensionElements>
     </bpmn2:sequenceFlow>
+    <bpmn2:endEvent id="_362E0507-99C8-4705-8461-9681496A2B31">
+      <bpmn2:incoming>_7C36E756-0037-4AA1-A08D-147D6EEAFE26</bpmn2:incoming>
+    </bpmn2:endEvent>
     <bpmn2:businessRuleTask id="_610136ED-6AC6-4E71-AD3B-579C67C23647" drools:ruleFlowGroup="incomeRule" name="Task" implementation="http://www.jboss.org/drools/rule">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
@@ -36,21 +49,22 @@ System.out.println("Tax : "+data.getIncomeTaxPercentage());]]></drools:script>
         </drools:onExit-script>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_1DC01710-72D4-461F-A1C2-B95C83F2C346</bpmn2:incoming>
-      <bpmn2:ioSpecification id="_KW-qEfbtEe6eaqJYBvbdyg">
+      <bpmn2:outgoing>_7C36E756-0037-4AA1-A08D-147D6EEAFE26</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_M28FYfbtEe6eaqJYBvbdyg">
         <bpmn2:dataInput id="_610136ED-6AC6-4E71-AD3B-579C67C23647_dataInputX" drools:dtype="com.b3.rbl.executeruleengine.IncomeDetails" itemSubjectRef="__610136ED-6AC6-4E71-AD3B-579C67C23647_dataInputXItem" name="data"/>
         <bpmn2:dataOutput id="_610136ED-6AC6-4E71-AD3B-579C67C23647_dataOutputX" drools:dtype="com.b3.rbl.executeruleengine.IncomeDetails" itemSubjectRef="__610136ED-6AC6-4E71-AD3B-579C67C23647_dataOutputXItem" name="data"/>
-        <bpmn2:inputSet id="_KW-qEvbtEe6eaqJYBvbdyg">
+        <bpmn2:inputSet id="_M28FYvbtEe6eaqJYBvbdyg">
           <bpmn2:dataInputRefs>_610136ED-6AC6-4E71-AD3B-579C67C23647_dataInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_KW-qE_btEe6eaqJYBvbdyg">
+        <bpmn2:outputSet id="_M28FY_btEe6eaqJYBvbdyg">
           <bpmn2:dataOutputRefs>_610136ED-6AC6-4E71-AD3B-579C67C23647_dataOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_KW-qFPbtEe6eaqJYBvbdyg">
+      <bpmn2:dataInputAssociation id="_M28FZPbtEe6eaqJYBvbdyg">
         <bpmn2:sourceRef>data</bpmn2:sourceRef>
         <bpmn2:targetRef>_610136ED-6AC6-4E71-AD3B-579C67C23647_dataInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_KW-qFfbtEe6eaqJYBvbdyg">
+      <bpmn2:dataOutputAssociation id="_M28FZfbtEe6eaqJYBvbdyg">
         <bpmn2:sourceRef>_610136ED-6AC6-4E71-AD3B-579C67C23647_dataOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>data</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
@@ -76,8 +90,8 @@ System.out.println("Income : "+data.getIncomeInRupees());
 System.out.println("Tax : "+data.getIncomeTaxPercentage());]]></bpmn2:script>
     </bpmn2:scriptTask>
   </bpmn2:process>
-  <bpmndi:BPMNDiagram id="_KW-qFvbtEe6eaqJYBvbdyg">
-    <bpmndi:BPMNPlane id="_KW-qF_btEe6eaqJYBvbdyg" bpmnElement="executeruleengine.TEST">
+  <bpmndi:BPMNDiagram id="_M28scPbtEe6eaqJYBvbdyg">
+    <bpmndi:BPMNPlane id="_M28scfbtEe6eaqJYBvbdyg" bpmnElement="executeruleengine.TEST">
       <bpmndi:BPMNShape id="shape__BC1ED25C-B129-4862-870C-80A02D3E30BB" bpmnElement="_BC1ED25C-B129-4862-870C-80A02D3E30BB">
         <dc:Bounds height="102.0" width="154.0" x="837.0" y="284.0"/>
       </bpmndi:BPMNShape>
@@ -87,6 +101,9 @@ System.out.println("Tax : "+data.getIncomeTaxPercentage());]]></bpmn2:script>
       <bpmndi:BPMNShape id="shape__610136ED-6AC6-4E71-AD3B-579C67C23647" bpmnElement="_610136ED-6AC6-4E71-AD3B-579C67C23647">
         <dc:Bounds height="102.0" width="154.0" x="1140.0" y="284.0"/>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__362E0507-99C8-4705-8461-9681496A2B31" bpmnElement="_362E0507-99C8-4705-8461-9681496A2B31">
+        <dc:Bounds height="56.0" width="56.0" x="1374.0" y="307.0"/>
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="edge_shape__63CE1F09-B5AD-4064-94D0-4940EDDD013E_to_shape__BC1ED25C-B129-4862-870C-80A02D3E30BB" bpmnElement="_FFA4C12C-61D8-4AE3-B42A-0C2D9B1B01C2">
         <di:waypoint xsi:type="dc:Point" x="757.0" y="335.0"/>
         <di:waypoint xsi:type="dc:Point" x="837.0" y="335.0"/>
@@ -95,14 +112,18 @@ System.out.println("Tax : "+data.getIncomeTaxPercentage());]]></bpmn2:script>
         <di:waypoint xsi:type="dc:Point" x="991.0" y="335.0"/>
         <di:waypoint xsi:type="dc:Point" x="1217.0" y="284.0"/>
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__610136ED-6AC6-4E71-AD3B-579C67C23647_to_shape__362E0507-99C8-4705-8461-9681496A2B31" bpmnElement="_7C36E756-0037-4AA1-A08D-147D6EEAFE26">
+        <di:waypoint xsi:type="dc:Point" x="1294.0" y="335.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1374.0" y="335.0"/>
+      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="_KW_RIPbtEe6eaqJYBvbdyg" type="BPSimData">
+  <bpmn2:relationship id="_M28scvbtEe6eaqJYBvbdyg" type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
           <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters"/>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_BC1ED25C-B129-4862-870C-80A02D3E30BB" id="_KW_RIfbtEe6eaqJYBvbdyg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_BC1ED25C-B129-4862-870C-80A02D3E30BB" id="_M28sc_btEe6eaqJYBvbdyg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -122,14 +143,14 @@ System.out.println("Tax : "+data.getIncomeTaxPercentage());]]></bpmn2:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_63CE1F09-B5AD-4064-94D0-4940EDDD013E" id="_KW_RIvbtEe6eaqJYBvbdyg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_63CE1F09-B5AD-4064-94D0-4940EDDD013E" id="_M28sdPbtEe6eaqJYBvbdyg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
               </bpsim:ProcessingTime>
             </bpsim:TimeParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_610136ED-6AC6-4E71-AD3B-579C67C23647" id="_KW_RI_btEe6eaqJYBvbdyg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_610136ED-6AC6-4E71-AD3B-579C67C23647" id="_M28sdfbtEe6eaqJYBvbdyg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -152,7 +173,7 @@ System.out.println("Tax : "+data.getIncomeTaxPercentage());]]></bpmn2:script>
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_KW-qEPbtEe6eaqJYBvbdyg</bpmn2:source>
-    <bpmn2:target>_KW-qEPbtEe6eaqJYBvbdyg</bpmn2:target>
+    <bpmn2:source>_M28FYPbtEe6eaqJYBvbdyg</bpmn2:source>
+    <bpmn2:target>_M28FYPbtEe6eaqJYBvbdyg</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
