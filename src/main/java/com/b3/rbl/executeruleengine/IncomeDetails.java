@@ -8,10 +8,13 @@ public class IncomeDetails implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "Income In Rupees")
+	@org.kie.api.definition.type.Label("Income In Rupees")
 	private java.lang.Integer incomeInRupees;
-	@org.kie.api.definition.type.Label(value = "Income Tax Percentage")
+	@org.kie.api.definition.type.Label("Income Tax Percentage")
 	private java.lang.Double incomeTaxPercentage;
+
+	@org.kie.api.definition.type.Label(value = "Execute Rule")
+	private boolean executeRule;
 
 	public IncomeDetails() {
 	}
@@ -32,10 +35,19 @@ public class IncomeDetails implements java.io.Serializable {
 		this.incomeTaxPercentage = incomeTaxPercentage;
 	}
 
+	public boolean isExecuteRule() {
+		return this.executeRule;
+	}
+
+	public void setExecuteRule(boolean executeRule) {
+		this.executeRule = executeRule;
+	}
+
 	public IncomeDetails(java.lang.Integer incomeInRupees,
-			java.lang.Double incomeTaxPercentage) {
+			java.lang.Double incomeTaxPercentage, boolean executeRule) {
 		this.incomeInRupees = incomeInRupees;
 		this.incomeTaxPercentage = incomeTaxPercentage;
+		this.executeRule = executeRule;
 	}
 
 }
