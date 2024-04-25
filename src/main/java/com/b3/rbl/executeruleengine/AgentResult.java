@@ -8,12 +8,21 @@ public class AgentResult implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "agentCode")
+	@org.kie.api.definition.type.Label("agentCode")
 	private java.lang.String agentCode;
-	@org.kie.api.definition.type.Label(value = "FYC Amount")
+	@org.kie.api.definition.type.Label("FYC Amount")
 	private java.lang.Double fycAmount;
-	@org.kie.api.definition.type.Label(value = "Bonus Rate %")
-	private java.lang.String bonusRate;
+	@org.kie.api.definition.type.Label("Bonus Rate")
+	private Double bonusRate;
+
+	@org.kie.api.definition.type.Label(value = "Persistency Controller")
+	private java.lang.Double persistencyController;
+
+	@org.kie.api.definition.type.Label(value = "Monthly Bonus")
+	private java.lang.Double monthlyBonus;
+
+	@org.kie.api.definition.type.Label(value = "Calculation Date")
+	private java.util.Date calculationDate;
 
 	public AgentResult() {
 	}
@@ -34,19 +43,47 @@ public class AgentResult implements java.io.Serializable {
 		this.fycAmount = fycAmount;
 	}
 
-	public java.lang.String getBonusRate() {
+	public java.lang.Double getBonusRate() {
 		return this.bonusRate;
 	}
 
-	public void setBonusRate(java.lang.String bonusRate) {
+	public void setBonusRate(java.lang.Double bonusRate) {
 		this.bonusRate = bonusRate;
 	}
 
+	public java.lang.Double getPersistencyController() {
+		return this.persistencyController;
+	}
+
+	public void setPersistencyController(java.lang.Double persistencyController) {
+		this.persistencyController = persistencyController;
+	}
+
+	public java.lang.Double getMonthlyBonus() {
+		return this.monthlyBonus;
+	}
+
+	public void setMonthlyBonus(java.lang.Double monthlyBonus) {
+		this.monthlyBonus = monthlyBonus;
+	}
+
+	public java.util.Date getCalculationDate() {
+		return this.calculationDate;
+	}
+
+	public void setCalculationDate(java.util.Date calculationDate) {
+		this.calculationDate = calculationDate;
+	}
+
 	public AgentResult(java.lang.String agentCode, java.lang.Double fycAmount,
-			java.lang.String bonusRate) {
+			java.lang.Double bonusRate, java.lang.Double persistencyController,
+			java.lang.Double monthlyBonus, java.util.Date calculationDate) {
 		this.agentCode = agentCode;
 		this.fycAmount = fycAmount;
 		this.bonusRate = bonusRate;
+		this.persistencyController = persistencyController;
+		this.monthlyBonus = monthlyBonus;
+		this.calculationDate = calculationDate;
 	}
 
 }
