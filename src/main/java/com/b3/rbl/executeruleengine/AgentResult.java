@@ -6,12 +6,47 @@ package com.b3.rbl.executeruleengine;
 
 public class AgentResult implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public AgentResult() {
-    }
+	@org.kie.api.definition.type.Label(value = "agentCode")
+	private java.lang.String agentCode;
+	@org.kie.api.definition.type.Label(value = "FYC Amount")
+	private java.lang.Double fycAmount;
+	@org.kie.api.definition.type.Label(value = "Bonus Rate %")
+	private java.lang.String bonusRate;
 
+	public AgentResult() {
+	}
 
+	public java.lang.String getAgentCode() {
+		return this.agentCode;
+	}
 
+	public void setAgentCode(java.lang.String agentCode) {
+		this.agentCode = agentCode;
+	}
+
+	public java.lang.Double getFycAmount() {
+		return this.fycAmount;
+	}
+
+	public void setFycAmount(java.lang.Double fycAmount) {
+		this.fycAmount = fycAmount;
+	}
+
+	public java.lang.String getBonusRate() {
+		return this.bonusRate;
+	}
+
+	public void setBonusRate(java.lang.String bonusRate) {
+		this.bonusRate = bonusRate;
+	}
+
+	public AgentResult(java.lang.String agentCode, java.lang.Double fycAmount,
+			java.lang.String bonusRate) {
+		this.agentCode = agentCode;
+		this.fycAmount = fycAmount;
+		this.bonusRate = bonusRate;
+	}
 
 }
