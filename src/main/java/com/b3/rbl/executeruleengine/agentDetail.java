@@ -6,12 +6,47 @@ package com.b3.rbl.executeruleengine;
 
 public class agentDetail implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public agentDetail() {
-    }
+	@org.kie.api.definition.type.Label(value = "Agent Code")
+	private java.lang.String agentCode;
+	@org.kie.api.definition.type.Label(value = "Policy Code")
+	private java.lang.String policyCode;
+	@org.kie.api.definition.type.Label(value = "fyc")
+	private java.lang.Double fyc;
 
+	public agentDetail() {
+	}
 
+	public java.lang.String getAgentCode() {
+		return this.agentCode;
+	}
 
+	public void setAgentCode(java.lang.String agentCode) {
+		this.agentCode = agentCode;
+	}
+
+	public java.lang.String getPolicyCode() {
+		return this.policyCode;
+	}
+
+	public void setPolicyCode(java.lang.String policyCode) {
+		this.policyCode = policyCode;
+	}
+
+	public java.lang.Double getFyc() {
+		return this.fyc;
+	}
+
+	public void setFyc(java.lang.Double fyc) {
+		this.fyc = fyc;
+	}
+
+	public agentDetail(java.lang.String agentCode, java.lang.String policyCode,
+			java.lang.Double fyc) {
+		this.agentCode = agentCode;
+		this.policyCode = policyCode;
+		this.fyc = fyc;
+	}
 
 }
