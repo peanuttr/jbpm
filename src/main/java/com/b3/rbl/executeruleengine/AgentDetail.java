@@ -8,12 +8,15 @@ public class AgentDetail implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "Agent Code")
+	@org.kie.api.definition.type.Label("Agent Code")
 	private java.lang.String agentCode;
-	@org.kie.api.definition.type.Label(value = "Policy Code")
+	@org.kie.api.definition.type.Label("Policy Code")
 	private java.lang.String policyCode;
-	@org.kie.api.definition.type.Label(value = "fyc")
+	@org.kie.api.definition.type.Label("fyc")
 	private java.lang.Double fyc;
+
+	@org.kie.api.definition.type.Label(value = "Agent Position")
+	private java.lang.String agentPosition;
 
 	public agentDetail() {
 	}
@@ -47,6 +50,25 @@ public class AgentDetail implements java.io.Serializable {
 		this.agentCode = agentCode;
 		this.policyCode = policyCode;
 		this.fyc = fyc;
+	}
+
+	public java.lang.String getAgentPosition() {
+		return this.agentPosition;
+	}
+
+	public void setAgentPosition(java.lang.String agentPosition) {
+		this.agentPosition = agentPosition;
+	}
+
+	public AgentDetail() {
+	}
+
+	public AgentDetail(java.lang.String agentCode, java.lang.String policyCode,
+			java.lang.Double fyc, java.lang.String agentPosition) {
+		this.agentCode = agentCode;
+		this.policyCode = policyCode;
+		this.fyc = fyc;
+		this.agentPosition = agentPosition;
 	}
 
 }
