@@ -72,7 +72,7 @@ public class AgentResult implements java.io.Serializable {
 				+ this.agentPosition + ", Fyc : " + this.fycAmount
 				+ ", Bonus : " + this.bonusRate + ", Monthly Bonus :"
 				+ this.monthlyBonus + ", Calculation Date : "
-				+ this.calcualtaionDate;
+				+ this.calculationDate;
 	}
 
 	public java.lang.String getAgentPosition() {
