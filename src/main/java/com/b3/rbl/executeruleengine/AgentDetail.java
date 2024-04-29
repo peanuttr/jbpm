@@ -12,14 +12,11 @@ public class AgentDetail implements java.io.Serializable {
 	private java.lang.String agentCode;
 	@org.kie.api.definition.type.Label("FYC Amount")
 	private java.lang.Double fycAmount;
-	@org.kie.api.definition.type.Label("Bonus Rate")
-	private java.lang.Double bonusRate;
-	@org.kie.api.definition.type.Label("Percistency Controller")
-	private java.lang.Double percistencyController;
-	@org.kie.api.definition.type.Label("Monthly Bonus")
-	private java.lang.Double monthlyBonus;
-	@org.kie.api.definition.type.Label("Calcualtaion Date")
-	private java.util.Date calcualtaionDate;
+	@org.kie.api.definition.type.Label(value = "Policy No")
+	private java.lang.String policyNo;
+
+	@org.kie.api.definition.type.Label(value = "Agent Position")
+	private java.lang.String agentPosition;
 
 	public AgentDetail() {
 	}
@@ -40,47 +37,28 @@ public class AgentDetail implements java.io.Serializable {
 		this.fycAmount = fycAmount;
 	}
 
-	public java.lang.Double getBonusRate() {
-		return this.bonusRate;
+	public java.lang.String getPolicyNo() {
+		return this.policyNo;
 	}
 
-	public void setBonusRate(java.lang.Double bonusRate) {
-		this.bonusRate = bonusRate;
+	public void setPolicyNo(java.lang.String policyNo) {
+		this.policyNo = policyNo;
 	}
 
-	public java.lang.Double getPercistencyController() {
-		return this.percistencyController;
+	public java.lang.String getAgentPosition() {
+		return this.agentPosition;
 	}
 
-	public void setPercistencyController(java.lang.Double percistencyController) {
-		this.percistencyController = percistencyController;
-	}
-
-	public java.lang.Double getMonthlyBonus() {
-		return this.monthlyBonus;
-	}
-
-	public void setMonthlyBonus(java.lang.Double monthlyBonus) {
-		this.monthlyBonus = monthlyBonus;
-	}
-
-	public java.util.Date getCalcualtaionDate() {
-		return this.calcualtaionDate;
-	}
-
-	public void setCalcualtaionDate(java.util.Date calcualtaionDate) {
-		this.calcualtaionDate = calcualtaionDate;
+	public void setAgentPosition(java.lang.String agentPosition) {
+		this.agentPosition = agentPosition;
 	}
 
 	public AgentDetail(java.lang.String agentCode, java.lang.Double fycAmount,
-			java.lang.Double bonusRate, java.lang.Double percistencyController,
-			java.lang.Double monthlyBonus, java.util.Date calcualtaionDate) {
+			java.lang.String policyNo, java.lang.String agentPosition) {
 		this.agentCode = agentCode;
 		this.fycAmount = fycAmount;
-		this.bonusRate = bonusRate;
-		this.percistencyController = percistencyController;
-		this.monthlyBonus = monthlyBonus;
-		this.calcualtaionDate = calcualtaionDate;
+		this.policyNo = policyNo;
+		this.agentPosition = agentPosition;
 	}
 
 }
