@@ -60,5 +60,10 @@ public class AgentDetail implements java.io.Serializable {
 		this.policyNo = policyNo;
 		this.agentPosition = agentPosition;
 	}
+	
+	public java.lang.String toString(){
+        return "Agent Code : "+this.agentCode+", Position : "+this.agentPosition+", Policy No : "+this.policyNo+", Fyc :"+this.fycAmount;
+    }
+
 
 }
