@@ -18,11 +18,11 @@ public class AgentResult implements java.io.Serializable {
 	private java.lang.Double percistencyController;
 	@org.kie.api.definition.type.Label("Monthly Bonus")
 	private java.lang.Double monthlyBonus;
-	@org.kie.api.definition.type.Label("Calcualtaion Date")
-	private String calcualtaionDate;
-
 	@org.kie.api.definition.type.Label("Agent Position")
 	private java.lang.String agentPosition;
+
+	@org.kie.api.definition.type.Label(value = "Calculataion Date")
+	private java.lang.String calculataionDate;
 
 	public AgentResult() {
 	}
@@ -83,25 +83,25 @@ public class AgentResult implements java.io.Serializable {
 		this.agentPosition = agentPosition;
 	}
 
-	public java.lang.String getCalcualtaionDate() {
-		return this.calcualtaionDate;
+	public java.lang.String getCalculataionDate() {
+		return this.calculataionDate;
 	}
 
-	public void setCalcualtaionDate(java.lang.String calcualtaionDate) {
-		this.calcualtaionDate = calcualtaionDate;
+	public void setCalculataionDate(java.lang.String calculataionDate) {
+		this.calculataionDate = calculataionDate;
 	}
 
 	public AgentResult(java.lang.String agentCode, java.lang.Double fycAmount,
 			java.lang.Double bonusRate, java.lang.Double percistencyController,
-			java.lang.Double monthlyBonus, java.lang.String calcualtaionDate,
-			java.lang.String agentPosition) {
+			java.lang.Double monthlyBonus, java.lang.String agentPosition,
+			java.lang.String calculataionDate) {
 		this.agentCode = agentCode;
 		this.fycAmount = fycAmount;
 		this.bonusRate = bonusRate;
 		this.percistencyController = percistencyController;
 		this.monthlyBonus = monthlyBonus;
-		this.calcualtaionDate = calcualtaionDate;
 		this.agentPosition = agentPosition;
+		this.calculataionDate = calculataionDate;
 	}
 
 }
