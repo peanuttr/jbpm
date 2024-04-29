@@ -82,5 +82,9 @@ public class AgentResult implements java.io.Serializable {
 		this.monthlyBonus = monthlyBonus;
 		this.calcualtaionDate = calcualtaionDate;
 	}
+	
+	 public java.lang.String toString(){
+        return "Agent Code : "+this.agentCode+", Fyc : "+this.fycAmount+", Bonus : "+this.bonusRate+", Monthly Bonus :"+this.monthlyBonus+", Calculation Date : "+this.calcualtaionDate;
+    }
 
 }
