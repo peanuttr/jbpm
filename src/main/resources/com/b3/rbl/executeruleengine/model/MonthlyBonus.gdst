@@ -16,7 +16,7 @@
   <attributeCols>
     <attribute-column52>
       <typedDefaultValue>
-        <valueString>MonthlyBonus</valueString>
+        <valueString>monthlyBonus</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </typedDefaultValue>
