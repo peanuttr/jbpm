@@ -21,8 +21,8 @@ public class AgentResult implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Agent Position")
 	private java.lang.String agentPosition;
 
-	@org.kie.api.definition.type.Label(value = "Calculataion Date")
-	private java.lang.String calculataionDate;
+	@org.kie.api.definition.type.Label(value = "Calculation Date")
+	private java.lang.String calculationDate;
 
 	public AgentResult() {
 	}
@@ -83,25 +83,25 @@ public class AgentResult implements java.io.Serializable {
 		this.agentPosition = agentPosition;
 	}
 
-	public java.lang.String getCalculataionDate() {
-		return this.calculataionDate;
+	public java.lang.String getCalculationDate() {
+		return this.calculationDate;
 	}
 
-	public void setCalculataionDate(java.lang.String calculataionDate) {
-		this.calculataionDate = calculataionDate;
+	public void setCalculationDate(java.lang.String calculationDate) {
+		this.calculationDate = calculationDate;
 	}
 
 	public AgentResult(java.lang.String agentCode, java.lang.Double fycAmount,
 			java.lang.Double bonusRate, java.lang.Double percistencyController,
 			java.lang.Double monthlyBonus, java.lang.String agentPosition,
-			java.lang.String calculataionDate) {
+			java.lang.String calculationDate) {
 		this.agentCode = agentCode;
 		this.fycAmount = fycAmount;
 		this.bonusRate = bonusRate;
 		this.percistencyController = percistencyController;
 		this.monthlyBonus = monthlyBonus;
 		this.agentPosition = agentPosition;
-		this.calculataionDate = calculataionDate;
+		this.calculationDate = calculationDate;
 	}
 
 }
