@@ -89,21 +89,20 @@
     </Pattern52>
   </conditionPatterns>
   <actionCols>
-    <insert-fact-column52>
+    <set-field-col52>
       <typedDefaultValue>
         <valueString></valueString>
-        <dataType>NUMERIC_DOUBLE</dataType>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </typedDefaultValue>
       <hideColumn>false</hideColumn>
-      <width>165</width>
-      <header>Bonus</header>
-      <factType>AgentResult</factType>
-      <boundName>result</boundName>
-      <factField>bonusRate</factField>
-      <type>Double</type>
-      <isInsertLogical>false</isInsertLogical>
-    </insert-fact-column52>
+      <width>100</width>
+      <header>Policy</header>
+      <boundName>agent</boundName>
+      <factField>policyNo</factField>
+      <type>String</type>
+      <update>false</update>
+    </set-field-col52>
   </actionCols>
   <auditLog>
     <filter class="org.drools.guvnor.client.modeldriven.dt52.auditlog.DecisionTableAuditLogFilter">
@@ -180,9 +179,8 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueNumeric class="double">10.0</valueNumeric>
-        <valueString></valueString>
-        <dataType>NUMERIC_DOUBLE</dataType>
+        <valueString>1</valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
     </list>
@@ -226,9 +224,8 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueNumeric class="double">12.0</valueNumeric>
-        <valueString></valueString>
-        <dataType>NUMERIC_DOUBLE</dataType>
+        <valueString>2</valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
     </list>
@@ -271,9 +268,8 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueNumeric class="double">15.0</valueNumeric>
-        <valueString></valueString>
-        <dataType>NUMERIC_DOUBLE</dataType>
+        <valueString>3</valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
     </list>
