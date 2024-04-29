@@ -6,12 +6,81 @@ package com.b3.rbl.executeruleengine;
 
 public class AgentResult implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public AgentResult() {
-    }
+	@org.kie.api.definition.type.Label(value = "Agent Code")
+	private java.lang.String agentCode;
+	@org.kie.api.definition.type.Label(value = "FYC Amount")
+	private java.lang.Double fycAmount;
+	@org.kie.api.definition.type.Label(value = "Bonus Rate")
+	private java.lang.Double bonusRate;
+	@org.kie.api.definition.type.Label(value = "Percistency Controller")
+	private java.lang.Double percistencyController;
+	@org.kie.api.definition.type.Label(value = "Monthly Bonus")
+	private java.lang.Double monthlyBonus;
+	@org.kie.api.definition.type.Label(value = "Calcualtaion Date")
+	private java.util.Date calcualtaionDate;
 
+	public AgentResult() {
+	}
 
+	public java.lang.String getAgentCode() {
+		return this.agentCode;
+	}
 
+	public void setAgentCode(java.lang.String agentCode) {
+		this.agentCode = agentCode;
+	}
+
+	public java.lang.Double getFycAmount() {
+		return this.fycAmount;
+	}
+
+	public void setFycAmount(java.lang.Double fycAmount) {
+		this.fycAmount = fycAmount;
+	}
+
+	public java.lang.Double getBonusRate() {
+		return this.bonusRate;
+	}
+
+	public void setBonusRate(java.lang.Double bonusRate) {
+		this.bonusRate = bonusRate;
+	}
+
+	public java.lang.Double getPercistencyController() {
+		return this.percistencyController;
+	}
+
+	public void setPercistencyController(java.lang.Double percistencyController) {
+		this.percistencyController = percistencyController;
+	}
+
+	public java.lang.Double getMonthlyBonus() {
+		return this.monthlyBonus;
+	}
+
+	public void setMonthlyBonus(java.lang.Double monthlyBonus) {
+		this.monthlyBonus = monthlyBonus;
+	}
+
+	public java.util.Date getCalcualtaionDate() {
+		return this.calcualtaionDate;
+	}
+
+	public void setCalcualtaionDate(java.util.Date calcualtaionDate) {
+		this.calcualtaionDate = calcualtaionDate;
+	}
+
+	public AgentResult(java.lang.String agentCode, java.lang.Double fycAmount,
+			java.lang.Double bonusRate, java.lang.Double percistencyController,
+			java.lang.Double monthlyBonus, java.util.Date calcualtaionDate) {
+		this.agentCode = agentCode;
+		this.fycAmount = fycAmount;
+		this.bonusRate = bonusRate;
+		this.percistencyController = percistencyController;
+		this.monthlyBonus = monthlyBonus;
+		this.calcualtaionDate = calcualtaionDate;
+	}
 
 }
