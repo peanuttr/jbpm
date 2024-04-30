@@ -21,8 +21,11 @@ public class AgentResult implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Agent Position")
 	private java.lang.String agentPosition;
 
-	@org.kie.api.definition.type.Label(value = "Calculation Date")
+	@org.kie.api.definition.type.Label("Calculation Date")
 	private java.lang.String calculationDate;
+
+	@org.kie.api.definition.type.Label(value = "agentDetail")
+	private java.util.List<com.b3.rbl.executeruleengine.model.AgentDetail> agentDetail;
 
 	public AgentResult() {
 	}
@@ -91,10 +94,24 @@ public class AgentResult implements java.io.Serializable {
 		this.calculationDate = calculationDate;
 	}
 
-	public AgentResult(java.lang.String agentCode, java.lang.Double fycAmount,
-			java.lang.Double bonusRate, java.lang.Double percistencyController,
-			java.lang.Double monthlyBonus, java.lang.String agentPosition,
-			java.lang.String calculationDate) {
+	public java.util.List<com.b3.rbl.executeruleengine.model.AgentDetail> getAgentDetail() {
+		return this.agentDetail;
+	}
+
+	public void setAgentDetail(
+			java.util.List<com.b3.rbl.executeruleengine.model.AgentDetail> agentDetail) {
+		this.agentDetail = agentDetail;
+	}
+
+	public AgentResult(
+			java.lang.String agentCode,
+			java.lang.Double fycAmount,
+			java.lang.Double bonusRate,
+			java.lang.Double percistencyController,
+			java.lang.Double monthlyBonus,
+			java.lang.String agentPosition,
+			java.lang.String calculationDate,
+			java.util.List<com.b3.rbl.executeruleengine.model.AgentDetail> agentDetail) {
 		this.agentCode = agentCode;
 		this.fycAmount = fycAmount;
 		this.bonusRate = bonusRate;
@@ -102,6 +119,7 @@ public class AgentResult implements java.io.Serializable {
 		this.monthlyBonus = monthlyBonus;
 		this.agentPosition = agentPosition;
 		this.calculationDate = calculationDate;
+		this.agentDetail = agentDetail;
 	}
 
 }
