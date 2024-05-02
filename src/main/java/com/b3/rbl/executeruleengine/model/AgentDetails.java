@@ -6,12 +6,26 @@ package com.b3.rbl.executeruleengine.model;
 
 public class AgentDetails implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public AgentDetails() {
-    }
+	@org.kie.api.definition.type.Label(value = "Agents")
+	private java.util.List<com.b3.rbl.executeruleengine.model.AgentResult> agents;
 
+	public AgentDetails() {
+	}
 
+	public java.util.List<com.b3.rbl.executeruleengine.model.AgentResult> getAgents() {
+		return this.agents;
+	}
 
+	public void setAgents(
+			java.util.List<com.b3.rbl.executeruleengine.model.AgentResult> agents) {
+		this.agents = agents;
+	}
+
+	public AgentDetails(
+			java.util.List<com.b3.rbl.executeruleengine.model.AgentResult> agents) {
+		this.agents = agents;
+	}
 
 }
