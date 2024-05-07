@@ -6,120 +6,120 @@ package com.b3.rbl.executeruleengine.model;
 
 public class AgentResult implements java.io.Serializable {
 
-	static final long serialVersionUID = 1L;
+    static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label("Agent Code")
-	private java.lang.String agentCode;
-	@org.kie.api.definition.type.Label("FYC Amount")
-	private java.lang.Double fycAmount;
-	@org.kie.api.definition.type.Label("Bonus Rate")
-	private java.lang.Double bonusRate;
-	@org.kie.api.definition.type.Label("Percistency Controller")
-	private java.lang.Double percistencyController;
-	@org.kie.api.definition.type.Label("Monthly Bonus")
-	private java.lang.Double monthlyBonus;
-	@org.kie.api.definition.type.Label("Agent Position")
-	private java.lang.String agentPosition;
+    @org.kie.api.definition.type.Label("Agent Code")
+    private java.lang.String agentCode;
+    @org.kie.api.definition.type.Label("FYC Amount")
+    private java.lang.Double fycAmount;
+    @org.kie.api.definition.type.Label("Bonus Rate")
+    private java.lang.Double bonusRate;
+    @org.kie.api.definition.type.Label("Percistency Controller")
+    private java.lang.Double percistencyController;
+    @org.kie.api.definition.type.Label("Monthly Bonus")
+    private java.lang.Double monthlyBonus;
+    @org.kie.api.definition.type.Label("Agent Position")
+    private java.lang.String agentPosition;
 
-	@org.kie.api.definition.type.Label("Calculation Date")
-	private java.lang.String calculationDate;
+    @org.kie.api.definition.type.Label("Calculation Date")
+    private java.lang.String calculationDate;
 
-	@org.kie.api.definition.type.Label(value = "agentDetail")
-	private java.util.List<com.b3.rbl.executeruleengine.model.AgentDetail> agentDetail;
+    @org.kie.api.definition.type.Label(value = "agentDetail")
+    private java.util.List<com.b3.rbl.executeruleengine.model.AgentDetail> agentDetail;
 
-	public AgentResult() {
-	}
+    public AgentResult() {
+    }
 
-	public java.lang.String getAgentCode() {
-		return this.agentCode;
-	}
+    public java.lang.String getAgentCode() {
+        return this.agentCode;
+    }
 
-	public void setAgentCode(java.lang.String agentCode) {
-		this.agentCode = agentCode;
-	}
+    public void setAgentCode(java.lang.String agentCode) {
+        this.agentCode = agentCode;
+    }
 
-	public java.lang.Double getFycAmount() {
-		return this.fycAmount;
-	}
+    public java.lang.Double getFycAmount() {
+        return this.fycAmount;
+    }
 
-	public void setFycAmount(java.lang.Double fycAmount) {
-		this.fycAmount = fycAmount;
-	}
+    public void setFycAmount(java.lang.Double fycAmount) {
+        this.fycAmount = fycAmount;
+    }
 
-	public java.lang.Double getBonusRate() {
-		return this.bonusRate;
-	}
+    public java.lang.Double getBonusRate() {
+        return this.bonusRate;
+    }
 
-	public void setBonusRate(java.lang.Double bonusRate) {
-		this.bonusRate = bonusRate;
-	}
+    public void setBonusRate(java.lang.Double bonusRate) {
+        this.bonusRate = bonusRate;
+    }
 
-	public java.lang.Double getPercistencyController() {
-		return this.percistencyController;
-	}
+    public java.lang.Double getPercistencyController() {
+        return this.percistencyController;
+    }
 
-	public void setPercistencyController(java.lang.Double percistencyController) {
-		this.percistencyController = percistencyController;
-	}
+    public void setPercistencyController(java.lang.Double percistencyController) {
+        this.percistencyController = percistencyController;
+    }
 
-	public java.lang.Double getMonthlyBonus() {
-		return this.monthlyBonus;
-	}
+    public java.lang.Double getMonthlyBonus() {
+        return this.monthlyBonus;
+    }
 
-	public void setMonthlyBonus(java.lang.Double monthlyBonus) {
-		this.monthlyBonus = monthlyBonus;
-	}
+    public void setMonthlyBonus(java.lang.Double monthlyBonus) {
+        this.monthlyBonus = monthlyBonus;
+    }
 
-	public java.lang.String toString() {
-		return "Agent Code : " + this.agentCode + ", Position : "
-				+ this.agentPosition + ", Fyc : " + this.fycAmount
-				+ ", Bonus : " + this.bonusRate + ", Monthly Bonus :"
-				+ this.monthlyBonus + ", Calculation Date : "
-				+ this.calculationDate;
-	}
+    public java.lang.String toString() {
+        return "Agent Code : " + this.agentCode + ", Position : "
+                + this.agentPosition + ", Fyc : " + this.fycAmount
+                + ", Bonus : " + this.bonusRate + ", Monthly Bonus :"
+                + this.monthlyBonus + ", Calculation Date : "
+                + this.calculationDate+", Detail : "+this.agentDetail;
+    }
 
-	public java.lang.String getAgentPosition() {
-		return this.agentPosition;
-	}
+    public java.lang.String getAgentPosition() {
+        return this.agentPosition;
+    }
 
-	public void setAgentPosition(java.lang.String agentPosition) {
-		this.agentPosition = agentPosition;
-	}
+    public void setAgentPosition(java.lang.String agentPosition) {
+        this.agentPosition = agentPosition;
+    }
 
-	public java.lang.String getCalculationDate() {
-		return this.calculationDate;
-	}
+    public java.lang.String getCalculationDate() {
+        return this.calculationDate;
+    }
 
-	public void setCalculationDate(java.lang.String calculationDate) {
-		this.calculationDate = calculationDate;
-	}
+    public void setCalculationDate(java.lang.String calculationDate) {
+        this.calculationDate = calculationDate;
+    }
 
-	public java.util.List<com.b3.rbl.executeruleengine.model.AgentDetail> getAgentDetail() {
-		return this.agentDetail;
-	}
+    public java.util.List<com.b3.rbl.executeruleengine.model.AgentDetail> getAgentDetail() {
+        return this.agentDetail;
+    }
 
-	public void setAgentDetail(
-			java.util.List<com.b3.rbl.executeruleengine.model.AgentDetail> agentDetail) {
-		this.agentDetail = agentDetail;
-	}
+    public void setAgentDetail(
+            java.util.List<com.b3.rbl.executeruleengine.model.AgentDetail> agentDetail) {
+        this.agentDetail = agentDetail;
+    }
 
-	public AgentResult(
-			java.lang.String agentCode,
-			java.lang.Double fycAmount,
-			java.lang.Double bonusRate,
-			java.lang.Double percistencyController,
-			java.lang.Double monthlyBonus,
-			java.lang.String agentPosition,
-			java.lang.String calculationDate,
-			java.util.List<com.b3.rbl.executeruleengine.model.AgentDetail> agentDetail) {
-		this.agentCode = agentCode;
-		this.fycAmount = fycAmount;
-		this.bonusRate = bonusRate;
-		this.percistencyController = percistencyController;
-		this.monthlyBonus = monthlyBonus;
-		this.agentPosition = agentPosition;
-		this.calculationDate = calculationDate;
-		this.agentDetail = agentDetail;
-	}
+    public AgentResult(
+            java.lang.String agentCode,
+            java.lang.Double fycAmount,
+            java.lang.Double bonusRate,
+            java.lang.Double percistencyController,
+            java.lang.Double monthlyBonus,
+            java.lang.String agentPosition,
+            java.lang.String calculationDate,
+            java.util.List<com.b3.rbl.executeruleengine.model.AgentDetail> agentDetail) {
+        this.agentCode = agentCode;
+        this.fycAmount = fycAmount;
+        this.bonusRate = bonusRate;
+        this.percistencyController = percistencyController;
+        this.monthlyBonus = monthlyBonus;
+        this.agentPosition = agentPosition;
+        this.calculationDate = calculationDate;
+        this.agentDetail = agentDetail;
+    }
 
 }
