@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_3QRv8AwqEe-v9svNqugrzg" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_UzYBcAwrEe-v9svNqugrzg" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_inputItem" structureRef="com.b3.rbl.executeruleengine.model.AgentResult"/>
   <bpmn2:itemDefinition id="_agentDetailItem" structureRef="com.b3.rbl.executeruleengine.model.AgentDetail"/>
   <bpmn2:itemDefinition id="_dataItem" structureRef="com.b3.rbl.executeruleengine.model.AgentDetails"/>
@@ -87,6 +87,7 @@ for (int i = 0; i < data.getAgents().size(); i++) {
     AgentResult.setAgentCode(data.getAgents().get(i).getAgentCode());
     AgentResult.setFycAmount(data.getAgents().get(i).getFycAmount());
     AgentResult.setAgentPosition(data.getAgents().get(i).getAgentPosition());
+    AgentResult.setAgentDetail(data.getAgents().get(i).getAgentDetail());
             System.out.println("data : "+data.getAgents().get(i).getAgentCode());
         listLocal.add(AgentResult);    
 }
@@ -96,20 +97,20 @@ kcontext.setVariable("agentList",listLocal);]]></drools:script>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_6055C290-2349-4D18-BF79-EFBFCAE41AAD</bpmn2:incoming>
       <bpmn2:outgoing>_11FA2608-22AF-4B43-9A34-83C3FF7434F2</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_3QS-EAwqEe-v9svNqugrzg">
+      <bpmn2:ioSpecification id="_UzYogAwrEe-v9svNqugrzg">
         <bpmn2:dataInput id="_BDF992D9-A733-4597-92D2-F4DBE39048EC_IN_COLLECTIONInputX" itemSubjectRef="_agentListItem" name="IN_COLLECTION"/>
         <bpmn2:dataInput id="_BDF992D9-A733-4597-92D2-F4DBE39048EC_agentInputX" itemSubjectRef="_BDF992D9-A733-4597-92D2-F4DBE39048EC_multiInstanceItemType_agent" name="agent"/>
-        <bpmn2:inputSet id="_3QS-EQwqEe-v9svNqugrzg">
+        <bpmn2:inputSet id="_UzYogQwrEe-v9svNqugrzg">
           <bpmn2:dataInputRefs>_BDF992D9-A733-4597-92D2-F4DBE39048EC_IN_COLLECTIONInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_BDF992D9-A733-4597-92D2-F4DBE39048EC_agentInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_3QTlIAwqEe-v9svNqugrzg"/>
+        <bpmn2:outputSet id="_UzYoggwrEe-v9svNqugrzg"/>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_3QTlIQwqEe-v9svNqugrzg">
+      <bpmn2:dataInputAssociation id="_UzYogwwrEe-v9svNqugrzg">
         <bpmn2:sourceRef>agentList</bpmn2:sourceRef>
         <bpmn2:targetRef>_BDF992D9-A733-4597-92D2-F4DBE39048EC_IN_COLLECTIONInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:multiInstanceLoopCharacteristics id="_3QTlIgwqEe-v9svNqugrzg" isSequential="true">
+      <bpmn2:multiInstanceLoopCharacteristics id="_UzYohAwrEe-v9svNqugrzg" isSequential="true">
         <bpmn2:loopDataInputRef>_BDF992D9-A733-4597-92D2-F4DBE39048EC_IN_COLLECTIONInputX</bpmn2:loopDataInputRef>
         <bpmn2:inputDataItem xsi:type="bpmn2:tDataInput" id="agent" itemSubjectRef="_BDF992D9-A733-4597-92D2-F4DBE39048EC_multiInstanceItemType_agent" name="agent"/>
       </bpmn2:multiInstanceLoopCharacteristics>
@@ -145,8 +146,8 @@ System.out.println("data in for loops : "+agent);]]></bpmn2:script>
       </bpmn2:scriptTask>
     </bpmn2:subProcess>
   </bpmn2:process>
-  <bpmndi:BPMNDiagram id="_3QTlIwwqEe-v9svNqugrzg">
-    <bpmndi:BPMNPlane id="_3QTlJAwqEe-v9svNqugrzg" bpmnElement="executeruleengine.AgentProcess">
+  <bpmndi:BPMNDiagram id="_UzYohQwrEe-v9svNqugrzg">
+    <bpmndi:BPMNPlane id="_UzYohgwrEe-v9svNqugrzg" bpmnElement="executeruleengine.AgentProcess">
       <bpmndi:BPMNShape id="shape__BDF992D9-A733-4597-92D2-F4DBE39048EC" bpmnElement="_BDF992D9-A733-4597-92D2-F4DBE39048EC">
         <dc:Bounds height="250.0" width="650.0" x="524.0" y="355.0"/>
       </bpmndi:BPMNShape>
@@ -183,12 +184,12 @@ System.out.println("data in for loops : "+agent);]]></bpmn2:script>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="_3QTlJQwqEe-v9svNqugrzg" type="BPSimData">
+  <bpmn2:relationship id="_UzYohwwrEe-v9svNqugrzg" type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
           <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters"/>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_D0834CF6-9DF8-47B9-A08F-C2F1D60BD578" id="_3QUMMAwqEe-v9svNqugrzg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_D0834CF6-9DF8-47B9-A08F-C2F1D60BD578" id="_UzYoiAwrEe-v9svNqugrzg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -198,7 +199,7 @@ System.out.println("data in for loops : "+agent);]]></bpmn2:script>
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_3QRv8AwqEe-v9svNqugrzg</bpmn2:source>
-    <bpmn2:target>_3QRv8AwqEe-v9svNqugrzg</bpmn2:target>
+    <bpmn2:source>_UzYBcAwrEe-v9svNqugrzg</bpmn2:source>
+    <bpmn2:target>_UzYBcAwrEe-v9svNqugrzg</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
