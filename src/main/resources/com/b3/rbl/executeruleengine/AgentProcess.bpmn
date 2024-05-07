@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_xGN3EAxOEe-gKLWJrngmNQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_W3JFoAxPEe-gKLWJrngmNQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_inputItem" structureRef="com.b3.rbl.executeruleengine.model.AgentResult"/>
   <bpmn2:itemDefinition id="_agentItem" structureRef="com.b3.rbl.executeruleengine.model.AgentResult"/>
   <bpmn2:itemDefinition id="_dataItem" structureRef="com.b3.rbl.executeruleengine.model.AgentDetails"/>
   <bpmn2:itemDefinition id="_agentListItem" structureRef="com.b3.rbl.executeruleengine.model.AgentDetails"/>
+  <bpmn2:itemDefinition id="_agentResultsItem" structureRef="com.b3.rbl.executeruleengine.model.AgentDetails"/>
   <bpmn2:itemDefinition id="_BDF992D9-A733-4597-92D2-F4DBE39048EC_multiInstanceItemType_agent" structureRef="com.b3.rbl.executeruleengine.model.AgentResult"/>
   <bpmn2:itemDefinition id="_BDF992D9-A733-4597-92D2-F4DBE39048EC_multiInstanceItemType_" structureRef="com.b3.rbl.executeruleengine.model.AgentResult"/>
   <bpmn2:itemDefinition id="__5DDF321A-2ECC-4B84-B359-668A9EF1C8F6_namespaceInputXItem" structureRef="java.lang.String"/>
@@ -16,6 +17,7 @@
     <bpmn2:property id="agent" itemSubjectRef="_agentItem" name="agent"/>
     <bpmn2:property id="data" itemSubjectRef="_dataItem" name="data"/>
     <bpmn2:property id="agentList" itemSubjectRef="_agentListItem" name="agentList"/>
+    <bpmn2:property id="agentResults" itemSubjectRef="_agentResultsItem" name="agentResults"/>
     <bpmn2:sequenceFlow id="_11FA2608-22AF-4B43-9A34-83C3FF7434F2" sourceRef="_BDF992D9-A733-4597-92D2-F4DBE39048EC" targetRef="_6903C9F5-7DE9-45B1-A839-331A5AEC2716"/>
     <bpmn2:sequenceFlow id="_6055C290-2349-4D18-BF79-EFBFCAE41AAD" sourceRef="_D0834CF6-9DF8-47B9-A08F-C2F1D60BD578" targetRef="_BDF992D9-A733-4597-92D2-F4DBE39048EC">
       <bpmn2:extensionElements>
@@ -88,7 +90,6 @@
 // kcontext.setVariable("agents",t);
 
 java.util.List<com.b3.rbl.executeruleengine.model.AgentResult> listLocal = new java.util.ArrayList<com.b3.rbl.executeruleengine.model.AgentResult>();
-java.util.List<com.b3.rbl.executeruleengine.model.AgentResult> listResult = new java.util.ArrayList<com.b3.rbl.executeruleengine.model.AgentResult>();
 for (int i = 0; i < data.getAgents().size(); i++) {
     com.b3.rbl.executeruleengine.model.AgentResult AgentResult = new com.b3.rbl.executeruleengine.model.AgentResult();
     AgentResult.setAgentCode(data.getAgents().get(i).getAgentCode());
@@ -102,40 +103,40 @@ System.out.println("List input : "+listLocal);
 kcontext.setVariable("agentList",listLocal);]]></drools:script>
         </drools:onEntry-script>
         <drools:onExit-script scriptFormat="http://www.java.com/java">
-          <drools:script><![CDATA[java.util.List<com.b3.rbl.executeruleengine.model.AgentResult> listLocal = new java.util.ArrayList<com.b3.rbl.executeruleengine.model.AgentResult>();
-java.util.List<com.b3.rbl.executeruleengine.model.AgentResult> listResult = new java.util.ArrayList<com.b3.rbl.executeruleengine.model.AgentResult>();
-for (int i = 0; i < data.getAgents().size(); i++) {
-    com.b3.rbl.executeruleengine.model.AgentResult AgentResult = new com.b3.rbl.executeruleengine.model.AgentResult();
-    AgentResult.setAgentCode(data.getAgents().get(i).getAgentCode());
-    AgentResult.setFycAmount(data.getAgents().get(i).getFycAmount());
-    AgentResult.setAgentPosition(data.getAgents().get(i).getAgentPosition());
-    AgentResult.setAgentDetail(data.getAgents().get(i).getAgentDetail());
-            System.out.println("data : "+data.getAgents().get(i).getAgentCode());
-        listLocal.add(AgentResult);    
-}
+          <drools:script><![CDATA[// java.util.List<com.b3.rbl.executeruleengine.model.AgentResult> listLocal = new java.util.ArrayList<com.b3.rbl.executeruleengine.model.AgentResult>();
+// java.util.List<com.b3.rbl.executeruleengine.model.AgentResult> listResult = new java.util.ArrayList<com.b3.rbl.executeruleengine.model.AgentResult>();
+// for (int i = 0; i < data.getAgents().size(); i++) {
+//     com.b3.rbl.executeruleengine.model.AgentResult AgentResult = new com.b3.rbl.executeruleengine.model.AgentResult();
+//     AgentResult.setAgentCode(data.getAgents().get(i).getAgentCode());
+//     AgentResult.setFycAmount(data.getAgents().get(i).getFycAmount());
+//     AgentResult.setAgentPosition(data.getAgents().get(i).getAgentPosition());
+//     AgentResult.setAgentDetail(data.getAgents().get(i).getAgentDetail());
+//             System.out.println("data : "+data.getAgents().get(i).getAgentCode());
+//         listLocal.add(AgentResult);    
+// }
 System.out.println("List output : "+listLocal);
 kcontext.setVariable("agentList",listLocal);]]></drools:script>
         </drools:onExit-script>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_6055C290-2349-4D18-BF79-EFBFCAE41AAD</bpmn2:incoming>
       <bpmn2:outgoing>_11FA2608-22AF-4B43-9A34-83C3FF7434F2</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_xGN3EQxOEe-gKLWJrngmNQ">
+      <bpmn2:ioSpecification id="_W3JssAxPEe-gKLWJrngmNQ">
         <bpmn2:dataInput id="_BDF992D9-A733-4597-92D2-F4DBE39048EC_IN_COLLECTIONInputX" itemSubjectRef="_agentListItem" name="IN_COLLECTION"/>
         <bpmn2:dataInput id="_BDF992D9-A733-4597-92D2-F4DBE39048EC_agentInputX" itemSubjectRef="_BDF992D9-A733-4597-92D2-F4DBE39048EC_multiInstanceItemType_agent" name="agent"/>
         <bpmn2:dataOutput id="_BDF992D9-A733-4597-92D2-F4DBE39048EC_OutputX" itemSubjectRef="_BDF992D9-A733-4597-92D2-F4DBE39048EC_multiInstanceItemType_" name=""/>
-        <bpmn2:inputSet id="_xGN3EgxOEe-gKLWJrngmNQ">
+        <bpmn2:inputSet id="_W3JssQxPEe-gKLWJrngmNQ">
           <bpmn2:dataInputRefs>_BDF992D9-A733-4597-92D2-F4DBE39048EC_IN_COLLECTIONInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_BDF992D9-A733-4597-92D2-F4DBE39048EC_agentInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_xGN3EwxOEe-gKLWJrngmNQ">
+        <bpmn2:outputSet id="_W3JssgxPEe-gKLWJrngmNQ">
           <bpmn2:dataOutputRefs>_BDF992D9-A733-4597-92D2-F4DBE39048EC_OutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_xGN3FAxOEe-gKLWJrngmNQ">
+      <bpmn2:dataInputAssociation id="_W3JsswxPEe-gKLWJrngmNQ">
         <bpmn2:sourceRef>agentList</bpmn2:sourceRef>
         <bpmn2:targetRef>_BDF992D9-A733-4597-92D2-F4DBE39048EC_IN_COLLECTIONInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:multiInstanceLoopCharacteristics id="_xGN3FQxOEe-gKLWJrngmNQ" isSequential="true">
+      <bpmn2:multiInstanceLoopCharacteristics id="_W3JstAxPEe-gKLWJrngmNQ" isSequential="true">
         <bpmn2:loopDataInputRef>_BDF992D9-A733-4597-92D2-F4DBE39048EC_IN_COLLECTIONInputX</bpmn2:loopDataInputRef>
         <bpmn2:inputDataItem xsi:type="bpmn2:tDataInput" id="agent" itemSubjectRef="_BDF992D9-A733-4597-92D2-F4DBE39048EC_multiInstanceItemType_agent" name="agent"/>
         <bpmn2:outputDataItem xsi:type="bpmn2:tDataOutput" id="" itemSubjectRef="_BDF992D9-A733-4597-92D2-F4DBE39048EC_multiInstanceItemType_" name=""/>
@@ -178,9 +179,13 @@ kcontext.setVariable("agentList",listLocal);]]></drools:script>
         <bpmn2:outgoing>_E810E87C-0F83-439F-9299-7FA2AF1F8D3D</bpmn2:outgoing>
         <bpmn2:script><![CDATA[double monthlyBonus = (agent.getFycAmount()*agent.getBonusRate())/100;
 agent.setMonthlyBonus(monthlyBonus);
-// listResult.add(agent);
+
+java.util.List<com.b3.rbl.executeruleengine.model.AgentResult> listResult = new java.util.ArrayList<com.b3.rbl.executeruleengine.model.AgentResult>();
+listResult = agentResults;
+listResult.add(agent);
+kcontext.setVariable("agentResults",listResult);
 kcontext.setVariable("agent",agent);
-// kcontext.setVariable("agentList",listResult);
+
 System.out.println("agent in for loops : "+agent);
 System.out.println("agent List in loops : "+agent);]]></bpmn2:script>
       </bpmn2:scriptTask>
@@ -198,17 +203,17 @@ System.out.println("agent List in loops : "+agent);]]></bpmn2:script>
         </bpmn2:extensionElements>
         <bpmn2:incoming>_3D6545DB-B859-4644-94A8-EC3402208519</bpmn2:incoming>
         <bpmn2:outgoing>_8DFD876D-2083-4C9E-B8E9-25EE50E9A2DE</bpmn2:outgoing>
-        <bpmn2:ioSpecification id="_xGN3FgxOEe-gKLWJrngmNQ">
+        <bpmn2:ioSpecification id="_W3JstQxPEe-gKLWJrngmNQ">
           <bpmn2:dataInput id="_5DDF321A-2ECC-4B84-B359-668A9EF1C8F6_dataInputX" drools:dtype="com.b3.rbl.executeruleengine.model.AgentResult" itemSubjectRef="__5DDF321A-2ECC-4B84-B359-668A9EF1C8F6_dataInputXItem" name="data"/>
           <bpmn2:dataOutput id="_5DDF321A-2ECC-4B84-B359-668A9EF1C8F6_dataOutputX" drools:dtype="com.b3.rbl.executeruleengine.model.AgentResult" itemSubjectRef="__5DDF321A-2ECC-4B84-B359-668A9EF1C8F6_dataOutputXItem" name="data"/>
-          <bpmn2:inputSet id="_xGN3FwxOEe-gKLWJrngmNQ">
+          <bpmn2:inputSet id="_W3JstgxPEe-gKLWJrngmNQ">
             <bpmn2:dataInputRefs>_5DDF321A-2ECC-4B84-B359-668A9EF1C8F6_dataInputX</bpmn2:dataInputRefs>
           </bpmn2:inputSet>
-          <bpmn2:outputSet id="_xGN3GAxOEe-gKLWJrngmNQ">
+          <bpmn2:outputSet id="_W3JstwxPEe-gKLWJrngmNQ">
             <bpmn2:dataOutputRefs>_5DDF321A-2ECC-4B84-B359-668A9EF1C8F6_dataOutputX</bpmn2:dataOutputRefs>
           </bpmn2:outputSet>
         </bpmn2:ioSpecification>
-        <bpmn2:dataInputAssociation id="_xGN3GQxOEe-gKLWJrngmNQ">
+        <bpmn2:dataInputAssociation id="_W3JsuAxPEe-gKLWJrngmNQ">
           <bpmn2:sourceRef>agent</bpmn2:sourceRef>
           <bpmn2:targetRef>_5DDF321A-2ECC-4B84-B359-668A9EF1C8F6_dataInputX</bpmn2:targetRef>
         </bpmn2:dataInputAssociation>
@@ -229,41 +234,41 @@ kcontext.setVariable("agent",agent);]]></bpmn2:script>
       </bpmn2:scriptTask>
     </bpmn2:subProcess>
   </bpmn2:process>
-  <bpmndi:BPMNDiagram id="_xGN3GgxOEe-gKLWJrngmNQ">
-    <bpmndi:BPMNPlane id="_xGN3GwxOEe-gKLWJrngmNQ" bpmnElement="executeruleengine.AgentProcess">
+  <bpmndi:BPMNDiagram id="_W3JsuQxPEe-gKLWJrngmNQ">
+    <bpmndi:BPMNPlane id="_W3JsugxPEe-gKLWJrngmNQ" bpmnElement="executeruleengine.AgentProcess">
       <bpmndi:BPMNShape id="shape__BDF992D9-A733-4597-92D2-F4DBE39048EC" bpmnElement="_BDF992D9-A733-4597-92D2-F4DBE39048EC">
-        <dc:Bounds height="241.0" width="940.0" x="524.0" y="354.0"/>
+        <dc:Bounds height="241.0" width="940.0" x="523.0" y="354.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__5A9E0213-3CCD-4E45-84B2-079DACC4F893" bpmnElement="_5A9E0213-3CCD-4E45-84B2-079DACC4F893">
-        <dc:Bounds height="102.0" width="154.0" x="669.0" y="428.0"/>
+        <dc:Bounds height="102.0" width="154.0" x="668.0" y="428.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="edge_shape__D35B0D48-80DD-4D57-B197-4BD773D7CD3C_to_shape__894BA237-DB0D-4105-91E1-D52CA120EE8E" bpmnElement="_E810E87C-0F83-439F-9299-7FA2AF1F8D3D">
-        <di:waypoint xsi:type="dc:Point" x="1261.0" y="479.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1408.0" y="479.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1260.0" y="479.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1407.0" y="479.0"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="shape__5DDF321A-2ECC-4B84-B359-668A9EF1C8F6" bpmnElement="_5DDF321A-2ECC-4B84-B359-668A9EF1C8F6">
-        <dc:Bounds height="102.0" width="154.0" x="888.0" y="428.0"/>
+        <dc:Bounds height="102.0" width="154.0" x="887.0" y="428.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="edge_shape__5A9E0213-3CCD-4E45-84B2-079DACC4F893_to_shape__5DDF321A-2ECC-4B84-B359-668A9EF1C8F6" bpmnElement="_3D6545DB-B859-4644-94A8-EC3402208519">
-        <di:waypoint xsi:type="dc:Point" x="746.0" y="530.0"/>
-        <di:waypoint xsi:type="dc:Point" x="965.0" y="428.0"/>
+        <di:waypoint xsi:type="dc:Point" x="745.0" y="530.0"/>
+        <di:waypoint xsi:type="dc:Point" x="964.0" y="428.0"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="shape__03ADD5E1-369C-442F-BBBA-9F5A135E709B" bpmnElement="_03ADD5E1-369C-442F-BBBA-9F5A135E709B">
-        <dc:Bounds height="56.0" width="56.0" x="524.0" y="451.0"/>
+        <dc:Bounds height="56.0" width="56.0" x="523.0" y="451.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__894BA237-DB0D-4105-91E1-D52CA120EE8E" bpmnElement="_894BA237-DB0D-4105-91E1-D52CA120EE8E">
-        <dc:Bounds height="56.0" width="56.0" x="1408.0" y="451.0"/>
+        <dc:Bounds height="56.0" width="56.0" x="1407.0" y="451.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="edge_shape__03ADD5E1-369C-442F-BBBA-9F5A135E709B_to_shape__5A9E0213-3CCD-4E45-84B2-079DACC4F893" bpmnElement="_28DC0549-4564-4A88-AABE-7F9D5A9E29D9">
-        <di:waypoint xsi:type="dc:Point" x="552.0" y="479.0"/>
-        <di:waypoint xsi:type="dc:Point" x="669.0" y="479.0"/>
+        <di:waypoint xsi:type="dc:Point" x="551.0" y="479.0"/>
+        <di:waypoint xsi:type="dc:Point" x="668.0" y="479.0"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="shape__D35B0D48-80DD-4D57-B197-4BD773D7CD3C" bpmnElement="_D35B0D48-80DD-4D57-B197-4BD773D7CD3C">
-        <dc:Bounds height="102.0" width="154.0" x="1107.0" y="428.0"/>
+        <dc:Bounds height="102.0" width="154.0" x="1106.0" y="428.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="edge_shape__5DDF321A-2ECC-4B84-B359-668A9EF1C8F6_to_shape__D35B0D48-80DD-4D57-B197-4BD773D7CD3C" bpmnElement="_8DFD876D-2083-4C9E-B8E9-25EE50E9A2DE">
-        <di:waypoint xsi:type="dc:Point" x="965.0" y="530.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1184.0" y="428.0"/>
+        <di:waypoint xsi:type="dc:Point" x="964.0" y="530.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1183.0" y="428.0"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="shape__D0834CF6-9DF8-47B9-A08F-C2F1D60BD578" bpmnElement="_D0834CF6-9DF8-47B9-A08F-C2F1D60BD578">
         <dc:Bounds height="56.0" width="56.0" x="125.0" y="447.0"/>
@@ -273,20 +278,20 @@ kcontext.setVariable("agent",agent);]]></bpmn2:script>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="edge_shape__D0834CF6-9DF8-47B9-A08F-C2F1D60BD578_to_shape__BDF992D9-A733-4597-92D2-F4DBE39048EC" bpmnElement="_6055C290-2349-4D18-BF79-EFBFCAE41AAD">
         <di:waypoint xsi:type="dc:Point" x="153.0" y="503.0"/>
-        <di:waypoint xsi:type="dc:Point" x="524.0" y="474.5"/>
+        <di:waypoint xsi:type="dc:Point" x="523.0" y="474.5"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__BDF992D9-A733-4597-92D2-F4DBE39048EC_to_shape__6903C9F5-7DE9-45B1-A839-331A5AEC2716" bpmnElement="_11FA2608-22AF-4B43-9A34-83C3FF7434F2">
-        <di:waypoint xsi:type="dc:Point" x="1464.0" y="474.5"/>
+        <di:waypoint xsi:type="dc:Point" x="1463.0" y="474.5"/>
         <di:waypoint xsi:type="dc:Point" x="1723.0" y="475.0"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="_xGN3HAxOEe-gKLWJrngmNQ" type="BPSimData">
+  <bpmn2:relationship id="_W3JsuwxPEe-gKLWJrngmNQ" type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
           <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters"/>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_D0834CF6-9DF8-47B9-A08F-C2F1D60BD578" id="_xGN3HQxOEe-gKLWJrngmNQ">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_D0834CF6-9DF8-47B9-A08F-C2F1D60BD578" id="_W3JsvAxPEe-gKLWJrngmNQ">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -296,7 +301,7 @@ kcontext.setVariable("agent",agent);]]></bpmn2:script>
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_xGN3EAxOEe-gKLWJrngmNQ</bpmn2:source>
-    <bpmn2:target>_xGN3EAxOEe-gKLWJrngmNQ</bpmn2:target>
+    <bpmn2:source>_W3JFoAxPEe-gKLWJrngmNQ</bpmn2:source>
+    <bpmn2:target>_W3JFoAxPEe-gKLWJrngmNQ</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
