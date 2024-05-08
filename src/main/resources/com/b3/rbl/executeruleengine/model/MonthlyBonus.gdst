@@ -108,21 +108,22 @@
       <width>-1</width>
       <header>MonthlyBonus</header>
       <definition>
-        <org.drools.workbench.models.datamodel.rule.ActionUpdateField>
+        <org.drools.workbench.models.datamodel.rule.ActionSetField>
           <fieldValues>
             <org.drools.workbench.models.datamodel.rule.ActionFieldValue>
               <field>monthlyBonus</field>
-              <value>(fycAmount*bonusRate)/100</value>
+              <value>($agent.fycAmount*$agent.bonusRate)/100</value>
               <nature>3</nature>
               <type>Double</type>
             </org.drools.workbench.models.datamodel.rule.ActionFieldValue>
           </fieldValues>
           <variable>$agent</variable>
-        </org.drools.workbench.models.datamodel.rule.ActionUpdateField>
+        </org.drools.workbench.models.datamodel.rule.ActionSetField>
       </definition>
       <childColumns>
         <org.drools.workbench.models.guided.dtable.shared.model.BRLActionVariableColumn>
           <typedDefaultValue>
+            <valueBoolean>true</valueBoolean>
             <valueString></valueString>
             <dataType>BOOLEAN</dataType>
             <isOtherwise>false</isOtherwise>
